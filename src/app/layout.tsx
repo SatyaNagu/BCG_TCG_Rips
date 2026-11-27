@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Unbounded } from "next/font/google";
+import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { GoldCursor } from "@/components/providers/GoldCursor";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SmoothScroll>
           <Header />
           <main id="main">{children}</main>
+          <Footer />
         </SmoothScroll>
         <GoldCursor />
       </body>
