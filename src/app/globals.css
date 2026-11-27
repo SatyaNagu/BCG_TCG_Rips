@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ * BC TCG design tokens
+ * Layer 1: primitives (raw values). Layer 2: semantic (purpose).
+ * Components only ever use the semantic layer.
+ * ------------------------------------------------------------------ */
+
+:root {
+  /* Primitives: brand palette */
+  --night: #0f0f0f;
+  --jet: #2a2929;
+  --black-olive: #444342;
+  --jonquil: #ffd000;
+  --selective-yellow: #ffb700;
+
+  /* Primitives: text neutrals (warm, to sit with the palette) */
+  --grey-500: #8a8987;
+  --grey-400: #a8a6a3;
+  --white-50: #f5f5f0;
+
+  /* Semantic: surfaces */
+  --bg: var(--night);
+  --bg-raised: color-mix(in srgb, var(--night) 55%, var(--jet));
+  --surface: var(--jet);
+  --surface-hover: var(--black-olive);
+  --border: rgb(68 67 66 / 0.55);
+  --border-strong: var(--black-olive);
+
+  /* Semantic: text */
+  --text: var(--white-50);
+  --text-muted: var(--grey-400);
+  --text-subtle: var(--grey-500);
+  --text-on-accent: var(--night);
+
+  /* Semantic: accent */
+  --accent: var(--jonquil);
+  --accent-hover: var(--selective-yellow);
+  --accent-press: color-mix(in srgb, var(--selective-yellow) 85%, var(--night));
+  --accent-glow: rgb(255 183 0 / 0.35);
+  --focus-ring: var(--jonquil);
+
+  /* Header */
+  --header-h: 88px;
+  --header-bg-scrolled: rgb(15 15 15 / 0.72);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 500ms;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-raised: var(--bg-raised);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+  --color-on-accent: var(--text-on-accent);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-press: var(--accent-press);
+
+  /* Fonts are set by next/font in layout.tsx; swap the pairing there. */
+  --font-display: var(--font-display-face), "Arial Black", sans-serif;
+  --font-sans: var(--font-body-face), system-ui, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --spacing-header: var(--header-h);
+
+  --ease-out-expo: var(--ease-out);
+  --ease-in-out-cine: var(--ease-in-out);
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Lenis recommended styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+@keyframes scroll-hint {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+/* Yellow keyword inside captions and headings */
+.kw {
+  color: var(--accent);
+}
+
+/* ---- Hero caption text styles (heroConfig.textStyle, or ?text= in the URL) ---- */
+
+/* Liquid glass: translucent lettering with a bright top edge, like light through glass. */
+.text-liquid {
+  color: transparent;
+  background-image: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.98) 0%,
+    rgb(255 255 255 / 0.82) 38%,
+    rgb(255 255 255 / 0.55) 62%,
+    rgb(255 255 255 / 0.9) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1px rgb(255 255 255 / 0.28);
+  filter: drop-shadow(0 1px 0 rgb(255 255 255 / 0.35)) drop-shadow(0 10px 28px rgb(0 0 0 / 0.55));
+}
+.text-liquid .kw,
+.text-liquid.kw {
+  background-image: linear-gradient(
+    110deg,
+    #ffe45c 0%,
+    #ffd400 30%,
+    #fff6c4 45%,
+    #ffb800 60%,
+    #ffd400 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255 236 150 / 0.5);
+  animation: kw-sheen 3.2s var(--ease-in-out) infinite;
+}
+@keyframes kw-sheen {
+  0%,
+  100% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0% 0;
+  }
+}
+
+/* Glass panel: solid lettering on a frosted, edge-lit glass card. */
+.text-glass-panel {
+  padding: 0.35em 0.55em 0.42em;
+  border-radius: 0.38em;
+  background: linear-gradient(160deg, rgb(255 255 255 / 0.16), rgb(255 255 255 / 0.04));
+  border: 1px solid rgb(255 255 255 / 0.18);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    inset 0 -1px 0 rgb(255 255 255 / 0.06),
+    0 18px 50px rgb(0 0 0 / 0.45);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  backdrop-filter: blur(18px) saturate(160%);
+}
+
+/* Glowing gold lettering for the black opening screen. */
+.text-gold-glow {
+  color: transparent;
+  background-image: linear-gradient(
+    110deg,
+    #b8860b 0%,
+    #ffd400 22%,
+    #fff3b0 38%,
+    #ffb800 55%,
+    #ffd400 75%,
+    #c98a00 100%
+  );
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1px rgb(255 228 120 / 0.35);
+  filter: drop-shadow(0 0 18px rgb(255 196 0 / 0.45)) drop-shadow(0 0 60px rgb(255 170 0 / 0.25));
+  animation: kw-sheen 4.5s var(--ease-in-out) infinite;
+}
+/* The keyword burns brighter. */
+.text-gold-glow--hot {
+  filter: drop-shadow(0 0 22px rgb(255 210 0 / 0.7)) drop-shadow(0 0 80px rgb(255 170 0 / 0.45));
+  animation-duration: 3s;
+}
+
+/* Slimmer header on phones */
+@media (max-width: 767px) {
+  :root {
+    --header-h: 72px;
+  }
+}
+
+/* No visible page scrollbar (scrolling still works with wheel, touch and keys). */
+html {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Gold cursor (src/components/providers/GoldCursor.tsx): hide the system pointer, keep the I-beam in text fields. */
+html.has-gold-cursor,
+html.has-gold-cursor * {
+  cursor: none !important;
+}
+html.has-gold-cursor :is(input, textarea, [contenteditable="true"]) {
+  cursor: text !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
