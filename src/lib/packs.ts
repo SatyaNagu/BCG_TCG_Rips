@@ -1,5 +1,5 @@
 /**
- * BC Rip's mystery packs (mock data for the school project).
+ * BC Rip's mystery packs (mock catalogue data).
  * Each pack yields ONE card; `odds` is the chance that card lands in each rarity tier.
  */
 

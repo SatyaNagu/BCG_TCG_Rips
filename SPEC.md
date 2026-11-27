@@ -1,6 +1,6 @@
 # Build: BC TCG, a Pokémon card website with a scroll-driven "pull → grade → reveal" hero
 
-This is a school project. You are building **BC TCG**, a modern, premium website for buying and
+This is a business project for BC Rip's. You are building **BC TCG**, a modern, premium website for buying and
 selling Pokémon cards (packs, a personal collection, and a wallet). The site should feel like a
 2025–2026 award-winning product site (think Apple product pages, Awwwards-level scroll
 storytelling): cinematic, smooth, and fast.
@@ -137,7 +137,7 @@ You cannot film this video yourself, so:
 1. Old Vite/Express app: move client/, server/, package.json, package-lock.json into _old_backup/. Delete node_modules.
 2. No hero video yet. Use placeholder frames. Write one prompt per scene for Kling (plus a Veo version), with matching start and end frames.
 3. Frames: 200 per set, desktop 1920x1080, mobile 1080x1920, WebP quality 80, named frame_0001.webp.
-4. I will supply real images (Charizard card, booster pack, PSA slab) later. Use stand-in designs until then and list the files and sizes needed. The site is only shown in class, not published.
+4. I will supply real images (Charizard card, booster pack, PSA slab) later. Use stand-in designs until then and list the files and sizes needed. The site is shown to stakeholders before it goes public.
 5. Fonts: suggest 3 free Google Font pairings for a black and yellow premium look; I pick one.
 6. Footer links and socials: "#" placeholders.
 7. Mock data: realistic sample packs, sets, prices and odds.

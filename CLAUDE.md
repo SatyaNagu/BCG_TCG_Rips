@@ -1,4 +1,4 @@
-- Project: BC TCG, a school project. Full spec is in SPEC.md.
+- Project: BC TCG, a business project for BC Rip's. Full spec is in SPEC.md.
 - Stack: Next.js + TypeScript + Tailwind + Motion + Lenis.
 - Theme: black and yellow. Logo/name: BC TCG.
 - Use the installed design skills and the 21st.dev Magic MCP.
