@@ -41,9 +41,9 @@
 
 ## About
 
-**BC TCG** is a school project: a premium, black-and-yellow storefront for a fictional pack shop called **BC Rip's**. It shows the full "buy → rip → keep" journey of a trading-card site as a piece of scroll storytelling, in the style of Apple product pages and Awwwards sites.
+**BC TCG** is a premium, black-and-yellow digital storefront for **BC Rip's**, an online trading-card pack shop. It presents the full "buy → rip → keep" customer journey as scroll storytelling, built to the standard of Apple product pages and Awwwards-winning sites.
 
-The home page is one long pinned scene. Scrolling plays a hand-made film frame by frame, and every caption points to a real part of the site. Below the film, five rarity packs float in a 3D showcase. The **Packs** page lets you spin a ring of packs, choose one from a stack, and slice it open with your mouse or finger to pull a card.
+The home page is one long pinned scene. Scrolling plays a custom-made film frame by frame, and every caption leads customers to a real part of the store. Below the film, five rarity tiers float in a 3D product showcase. On the **Packs** page, customers spin a ring of packs, choose one from a stack, and slice it open with a mouse or finger to pull a card.
 
 > Everything runs on mock data. No real money, accounts or payments are involved.
 
@@ -283,9 +283,9 @@ scenes: [
 
 ## Credits
 
-Built by **[Satya Nagu](https://github.com/SatyaNagu)** as a school project.
+Designed and built by **[Satya Nagu](https://github.com/SatyaNagu)** for BC Rip's.
 
-Pokémon and all related names and card art are trademarks of Nintendo, Creatures Inc. and GAME FREAK inc. This is a non-commercial student project with no affiliation to them. "BC Rip's" is a fictional shop.
+Pokémon and all related names and card art are trademarks of Nintendo, Creatures Inc. and GAME FREAK inc. BC TCG and BC Rip's are not affiliated with, endorsed by or sponsored by them.
 
 <p align="center">
   <img src="src/app/icon.svg" alt="BC monogram" width="48">
